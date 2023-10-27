@@ -23,9 +23,9 @@ def pyarrow2athena(  # pylint: disable=too-many-branches,too-many-return-stateme
 ) -> str:
     """Pyarrow to Athena data types conversion."""
     if pa.types.is_int8(dtype):
-        return "tinyint"
+        return "int"
     if pa.types.is_int16(dtype) or pa.types.is_uint8(dtype):
-        return "smallint"
+        return "int"
     if pa.types.is_int32(dtype) or pa.types.is_uint16(dtype):
         return "int"
     if pa.types.is_int64(dtype) or pa.types.is_uint32(dtype):
