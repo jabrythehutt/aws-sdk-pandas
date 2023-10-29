@@ -341,7 +341,8 @@ def to_iceberg(
                 database=database,
                 table=table,
                 index=index,
-                partition_cols=partition_cols,
+                # Iceberg tables have hidden partitions so no schema changes are applied
+                partition_cols=[],
                 boto3_session=boto3_session,
                 dtype=dtype,
                 catalog_id=catalog_id,
